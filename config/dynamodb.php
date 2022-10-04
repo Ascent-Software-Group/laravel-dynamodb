@@ -39,7 +39,7 @@ return [
         ],
         'aws_iam_role' => [
             'region' => env('DYNAMODB_REGION'),
-            'debug' => true,
+            'debug' => env('DYNAMODB_DEBUG', false),
         ],
         'local' => [
             'credentials' => [
@@ -49,7 +49,7 @@ return [
             'region' => 'stub',
              // see http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html
             'endpoint' => env('DYNAMODB_LOCAL_ENDPOINT'),
-            'debug' => true,
+            'debug' => env('DYNAMODB_DEBUG', true),
         ],
         'test' => [
             'credentials' => [
@@ -58,7 +58,7 @@ return [
             ],
             'region' => 'test',
             'endpoint' => env('DYNAMODB_LOCAL_ENDPOINT'),
-            'debug' => true,
+            'debug' => env('DYNAMODB_DEBUG', true),
         ],
     ],
 ];
